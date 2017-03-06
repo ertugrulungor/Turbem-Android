@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.ertugrulungor.kullanicigiris.MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:padding="15dp"
+        android:layout_margin="16dp">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/logo"
+            android:layout_gravity="center"/>
+
+        <EditText
+            android:id="@+id/kulAdi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="kullanıcı Adı"/>
+
+        <EditText
+            android:id="@+id/sifre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Şifre"
+            android:inputType="textPassword"/>
+
+        <Button
+            android:id="@+id/btnYeniSayfa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GİRİŞ YAP"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kayıt olmak için buraya tıkla"
+        android:layout_alignParentBottom="true"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:background="@color/colorPrimaryDark"
+        android:padding="10dp"/>
+
+</RelativeLayout>
