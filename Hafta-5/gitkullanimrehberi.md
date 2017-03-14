@@ -1,15 +1,17 @@
-#Git Kullanma Rehberi
+# Git Kullanma Rehberi
 
 **Bir projeyi bilgisayarınıza indirmek:**
 >git clone **sunucu**
 
 **Tüm dosyaları github'a atmak:**
+
 Klonladığınız projede yaptığınız tüm değişiklikleri sunucuya atmak için aşağıdaki komutlaru sırayla çalıştırın
 >git add *
 >git commit -m "Açıklama"
 >git push
 
 **Yeni bir depo oluşturmak:**
+
 Depoya atmak istediğiniz klasöre gidin ve aşağıdaki komutları sırayla çalıştırın
 >git init
 >git add *
