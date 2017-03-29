@@ -1,0 +1,35 @@
+CREATE TABLE Isci(
+  id INTEGER PRIMARY KEY autoincrement,
+  IsciAdi TEXT,
+  yas INTEGER
+ )
+
+
+SELECT IsciAdi,yas FROM Isci
+
+SELECT DISTINCT(yas) FROM Isci
+
+SELECT * FROM Isci WHERE yas=22 OR IsciAdi='Yasin'
+SELECT * FROM Isci WHERE yas>22
+
+SELECT * FROM Isci WHERE yas BETWEEN 22 AND 24
+
+SELECT * FROM Isci WHERE yas IN (22,21)
+
+SELECT * FROM Isci WHERE IsciAdi LIKE '%l'
+SELECT * FROM Isci WHERE IsciAdi LIKE '%u_'
+
+SELECT * FROM Isci Order by yas DESC/ASC
+
+SELECT * FROM Isci 
+WHERE IsciAdi LIKE 'D%' 
+Order by yas DESC
+
+SELECT LENGTH(IsciAdi) AS 'uzunluk' FROM Isci 
+SELECT  AVG(yas) AS 'yas ortalamasi' FROM Isci 
+SELECT  SUM(yas) AS 'yas toplami' FROM Isci 
+SELECT  MAX(yas) AS 'yas toplami' FROM Isci 
+SELECT  MIN(yas) AS 'yas toplami' FROM Isci 
+SELECT  COUNT(*) AS 'toplam kisi' FROM Isci WHERE yas=22
+SELECT  ROUND(maas) AS 'toplam kisi' FROM Isci 
+SELECT  DATETIME() AS 'tarih'
