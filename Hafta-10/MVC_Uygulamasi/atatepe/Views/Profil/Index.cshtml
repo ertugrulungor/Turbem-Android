@@ -1,0 +1,19 @@
+﻿@using atatepe.Models;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+   @foreach (Kisi k in ViewBag.kisiler)
+   {
+       <h1><a href="~/Profil/Detay/@k.id">@k.adsoyad</a></h1>
+   }
+</body>
+</html>

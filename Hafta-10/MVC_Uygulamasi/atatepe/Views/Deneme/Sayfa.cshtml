@@ -1,0 +1,24 @@
+﻿
+
+<h1>Burası sayfa sayfası</h1>
+
+@{ 
+    foreach (string t in (List<string>)ViewData["takimlar"])
+    {
+        <h3>@t<br /></h3>
+    }
+
+    foreach (string t in ViewBag.takims)
+    {
+        <h4><b>@t<br /></b></h4>
+    }
+    <h1>
+        @{ 
+            for (int i = 0; i < 10; i++)
+            {
+                @i
+            }
+        }
+    </h1>
+
+}

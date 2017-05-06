@@ -1,0 +1,20 @@
+﻿@using atatepe.Models
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detay</title>
+</head>
+<body>
+    @{ 
+        Kisi k = ViewBag.kisi;
+        int yas = DateTime.Now.Year - k.dogumtarihi.Year;
+    }
+    <h1>@k.adsoyad isimli kişinin yaşı: @yas</h1>
+</body>
+</html>
