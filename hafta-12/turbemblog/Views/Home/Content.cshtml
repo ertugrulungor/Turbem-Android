@@ -1,0 +1,27 @@
+﻿@using turbemblog.Models
+@model Makale
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+               <p>@Model.icerik</p>
+            </div>
+        </div>
+    </div>
+</article>
+
+@section baslik{
+<div class="site-heading">
+    <h1>@Model.baslik</h1>
+    <hr class="small">
+    <span class="subheading">
+        @{
+            foreach (EtiketMakale em in Model.EtiketMakales)
+            {
+                <a class="etiket-link" href="~/Home/tag/@em.EtiketId">@em.Etiket.adi</a>  
+            }
+        }
+       
+    </span>
+</div>    
+}

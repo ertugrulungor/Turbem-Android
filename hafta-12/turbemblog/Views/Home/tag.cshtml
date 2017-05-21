@@ -1,0 +1,42 @@
+﻿@using turbemblog.Models
+@model IEnumerable<EtiketMakale>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            @{
+                foreach (EtiketMakale em in Model)
+                {
+                    <div class="post-preview">
+                        <a href="~/Home/Content/@em.MakaleId">
+                            <h2 class="post-title">
+                                @em.Makale.baslik
+                            </h2>
+                            <h3 class="post-subtitle">
+                                @if (em.Makale.icerik.Length <= 140)
+                                {
+                                    @em.Makale.icerik;
+                                }
+                                else
+                                {
+                                    @em.Makale.icerik.Substring(0, 140); <span>(Devamını oku)</span>
+                                }
+
+                            </h3>
+                        </a>
+                        <p class="post-meta">Posted by <a href="#">@em.Makale.Kullanici.kullaniciAdi</a> on @em.Makale.yayimTarihi.Value.ToString("dd.MM.yyyy")</p>
+                    </div>
+                    <hr>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+@section baslik{
+    <div class="site-heading">
+        <h1>@Model.FirstOrDefault().Etiket.adi Etiketi</h1>
+        <hr class="small">
+        <span class="subheading">Arama sonuçları aşağıdadır</span>
+    </div>
+}

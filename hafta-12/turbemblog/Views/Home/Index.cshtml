@@ -1,0 +1,49 @@
+﻿@using turbemblog.Models
+@model IEnumerable<Makale>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            @{
+                foreach (Makale m in Model)
+                {
+                    <div class="post-preview">
+                        <a href="~/Home/Content/@m.id">
+                            <h2 class="post-title">
+                                @m.baslik
+                            </h2>
+                            <h3 class="post-subtitle">
+                                @if (m.icerik.Length <= 140)
+                                {
+                                    @m.icerik;
+                                }
+                                else
+                                {
+                                    @m.icerik.Substring(0, 140); <span>(Devamını oku)</span>
+                                }
+                               
+                            </h3>
+                        </a>
+                        <p class="post-meta">Posted by <a href="#">@m.Kullanici.kullaniciAdi</a> on @m.yayimTarihi.Value.ToString("dd.MM.yyyy")</p>
+                    </div>
+                    <hr>
+                }
+            }
+            
+            <!-- Pager -->
+            <ul class="pager">
+                <li class="next">
+                    <a href="#">Older Posts &rarr;</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+@section baslik{
+    <div class="site-heading">
+    <h1>Ertuğrul Üngör</h1>
+    <hr class="small">
+    <span class="subheading">A Full Stack Developer</span>
+</div>    
+}

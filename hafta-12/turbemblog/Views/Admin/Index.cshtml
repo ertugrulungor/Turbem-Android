@@ -1,0 +1,37 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <input type="text" id="kulAdi" placeholder="Kullanıcı adı" /><br />
+    <input type="password" id="sifre"  placeholder="Şifre" /><br />
+    <button type="button" id="btnGiris">Giriş Yap</button>
+    <div id="hosgeldinYazi"></div>
+
+    <script src="~/Content/js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#btnGiris").click(function () {
+                var kulAdi = $("#kulAdi").val();
+                var sifre = $("#sifre").val();
+
+                $.post("/Admin/GirisYap", { kulAdi: kulAdi, sifre: sifre }, function (data) {
+                    if (data.success == 1) {
+                        $("#hosgeldinYazi").text("Hoşgeldin " + data.email);
+                    } else {
+                        $("#hosgeldinYazi").text("Kullanıcı adı yada şifre hatalı");
+                    }
+                });
+            });
+        })
+    </script>
+</body>
+</html>
