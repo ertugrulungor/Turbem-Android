@@ -13,5 +13,10 @@ namespace turbemblog.Controllers
         {
             return View();
         }
+
+        public ActionResult Giris()
+        {
+            return View();
+        }
     }
 }
